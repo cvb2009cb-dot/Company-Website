@@ -1,0 +1,360 @@
+:root {
+  --green-light: #00d890;
+  --green-dark: #007a55;
+  --green-gradient: linear-gradient(135deg, #02ca8e, #007a55);
+  --gray-bg: #f5f7f6;
+  --white: #ffffff;
+  --dark-gray: #1f1f1f;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--gray-bg);
+  color: var(--dark-gray);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding: 0 40px;
+}
+
+header {
+  background: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  border-bottom: 2px solid rgba(0, 216, 144, 0.2);
+  transition: all 0.4s ease;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+}
+
+header .logo h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: var(--green-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--dark-gray);
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--green-dark);
+  transform: scale(1.05);
+}
+
+nav ul li a.active {
+  color: var(--green-dark);
+  border-bottom: 3px solid var(--green-dark);
+  padding-bottom: 3px;
+}
+
+.intro {
+  background: var(--green-gradient);
+  color: var(--white);
+  text-align: center;
+  padding: 120px 20px;
+  border-radius: 18px;
+  margin-top: 40px;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: var(--white);
+  color: var(--green-dark);
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--green-dark);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 80px 5%;
+  background: var(--white);
+  margin: 60px auto;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+section h2 {
+  color: var(--green-dark);
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.box-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.box {
+  flex: 1;
+  min-width: 280px;
+  max-width: 330px;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 216, 144, 0.15);
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  border-radius: 0 0 50px 50px;
+  background: var(--green-gradient);
+  box-shadow: 0 0 10px rgba(0, 216, 144, 0.3);
+}
+
+.box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.box h3 {
+  color: var(--green-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 0.95rem;
+  color: #555;
+  padding: 0 5px;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  margin: 0 auto;
+  background: #f9fefc;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  animation: fadeInUp 1s ease;
+}
+
+form input,
+form textarea {
+  padding: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form button {
+  background: var(--green-gradient);
+  color: var(--white);
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #00c685;
+  transform: translateY(-3px);
+}
+
+footer {
+  background: #1a1a1a;
+  color: var(--white);
+  text-align: center;
+  padding: 50px;
+  font-size: 0.95rem;
+  margin-top: 60px;
+  border-top: 3px solid var(--green-dark);
+}
+
+footer a {
+  color: var(--green-light);
+  text-decoration: none;
+}
+
+/* UNIVERSAL BOX FIX FOR ALL SECTIONS */
+section > div {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Box Design */
+section > div > div {
+  background: #f9f9f9;
+  border: 1px solid rgba(0, 216, 144, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  width: 320px;
+  text-align: center;
+  transition: none;
+}
+
+/* Headings inside boxes */
+section > div > div h3,
+section > div > div h4 {
+  color: #007a55;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs inside boxes */
+section > div > div p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+section > div.button-container,
+section > div.btn-container {
+  display: block !important;
+  text-align: center;
+  margin-top: 40px;
+}
+
+section a.btn,
+section button.btn {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* SERVICES SECTION */
+section[id*="service"], section[class*="service"],
+#services, .services {
+  display: flex !important;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 70px 6%;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+section[id*="service"] > *,
+section[class*="service"] > *,
+#services > *,
+.services > * {
+  flex: 1 1 280px;
+  background: #f9fefc;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  min-height: 220px;
+}
+
+section[id*="service"] > *:hover,
+section[class*="service"] > *:hover,
+#services > *:hover,
+.services > *:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+/* keep spacing consistent */
+section[id*="service"] h2,
+section[class*="service"] h2,
+#services h2,
+.services h2 {
+  width: 100%;
+  text-align: center;
+  color: #007a55;
+  margin-bottom: 35px;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
